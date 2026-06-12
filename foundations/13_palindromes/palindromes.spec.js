@@ -16,7 +16,7 @@ describe('palindromes', () => {
   test.skip('is case insensitive', () => {
     expect(palindromes('Racecar!')).toBe(true);
   });
-  test.skip('detects non-palindromes', () => {
+  test('detects non-palindromes', () => {
     expect(palindromes('ZZZZ car, a man, a maracaz.')).toBe(false);
   });
   test.skip('detects non-palindromes with numbers', () => {
