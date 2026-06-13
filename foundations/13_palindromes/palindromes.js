@@ -1,13 +1,23 @@
 const palindromes = function (value) {
+
   /* Variable that stores value w/o spaces */
-  str = value.replace(/\S+/g, "");
+  const defaultValue = value;
+  
+  const modifiedStr = value
+    .toLowerCase()
+    // replaces whitespace and exclamation marks.
+    .replace(/[\s.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 
   /* reversed new str */
-  reversedStr = [str].reverse().join("");
-  console.log(`The starting string is ${str} and the reversed string is ${reversedStr}.`);
-  if (reversedStr === str) {return true;} 
-  else {return false;}   // Expected behavior: Any non-palindrome returns false.
-//                          // Actual behavior: Identifies non-palindromes as true.  
+  const reversedStr = modifiedStr
+    .split("")
+    .reverse()
+    .join("");
+  console.log(`The starting string is "${defaultValue}".\nThe modified string is "${modifiedStr}".\nThe reversed string is "${reversedStr}".`);
+  if (reversedStr === modifiedStr) {return true;} 
+  else {return false;}
 };
+
+
 // // Do not edit below this line
 module.exports = palindromes;
