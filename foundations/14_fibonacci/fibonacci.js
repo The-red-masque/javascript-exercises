@@ -12,17 +12,17 @@ const fibonacci = function(sequencePlace) {
     // let i = 2;
 
 
-    if (number === 1) {return number1;}
-    else if (number === 2) {return number2;}
+    if (number === 0) {return number1;}
+    else if (number === 1) {return number2;}
     else {
-      for (let i = 3; i<= number; i++) {
+      for (let i = 2; i<= number; i++) {
         sum = number1 + number2;
         number1 = number2;
         number2 = sum;
       }
       return number2;
     }
-  }
+  } else {return "OOPS";}
 }
 /*if (isPositive) {
     if (fibonacciNumber == 0) {let number = 0;return number;}
