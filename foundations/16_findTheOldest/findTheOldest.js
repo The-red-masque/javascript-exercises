@@ -8,19 +8,19 @@ const findTheOldest = function(people) {
   */
   
   //const hasDied = item.includes("yearOfDeath");
-  //const thisYear = new Date().getFullYear();
+    const thisYear = new Date().getFullYear();
     function sortByAge(arr) {
     arr.sort((a, b) => b.age - a.age);
     }
-  people.forEach((item) => {
-    item.age = item.yearOfDeath - item.yearOfBirth;
+
+    // Creates age to track who is oldest.
+    people.forEach((item) => {
+      item.yearOfDeath ? item.age = item.yearOfDeath - item.yearOfBirth : 
+      item.age = thisYear - item.yearOfBirth;
   });
 
   sortByAge(people);
   let oldestPersonObject = people.at(0);
-  console.log(oldestPersonObject);
-  //let oldestPersonName = oldestPersonObject.name; 
-  //console.log(oldestPersonName);
   return oldestPersonObject;
   
 
